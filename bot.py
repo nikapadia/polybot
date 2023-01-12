@@ -14,7 +14,7 @@ slack_event_adapter = SlackEventAdapter(os.environ["SIGNING_SECRET"],"/slack/eve
 client = slack.WebClient(token=os.environ["SLACK_TOKEN"])
 ## we do it this way so that we can keep .env file secret
 
-## client.chat_postMessage(channel='#test', text="SODDDAAAAA")
+client.chat_postMessage(channel='#test', text="Running!")
 ## ^ how to send a message
 @slack_event_adapter.on("message")
 def message(payload):
